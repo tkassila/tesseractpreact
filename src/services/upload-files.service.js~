@@ -1,0 +1,16 @@
+import FormData from 'form-data';
+import http from "../http-common";
+
+class UploadFilesService {
+  async upload(file, onUploadProgress) {
+    let formData = new FormData();
+
+    formData.append("file", file);
+
+    return await http.put("/tika", formData, {
+      onUploadProgress,
+    });
+  }
+}
+
+export default new UploadFilesService();

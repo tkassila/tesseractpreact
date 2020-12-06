@@ -1,0 +1,12 @@
+import axios from "axios";
+
+export default axios.create({
+  baseURL: "http://127.0.0.1:9998",
+  headers: {
+      'Content-Type': 'multipart/form-data',
+      "origins": "*",
+      "Accept": "text/plain",
+      'Origin': '*',
+      'Expect': '100-continue'
+  }
+});

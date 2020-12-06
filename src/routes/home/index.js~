@@ -1,0 +1,46 @@
+import { h, Component } from 'preact';
+import style from './style.css';
+import UploadFiles from "../../components/upload-files.component";
+
+class Home extends Component {
+   
+    constructor(props) {
+    super(props);
+      this.state = {
+        selectedFile: null
+      }
+    }
+    
+    onSubmit = e => {
+	 this.setState({
+	     selectedFile: e.target.files[0],
+	     loaded: 0,
+	 })
+    alert(this.state.selectedFile);
+    e.preventDefault();
+   }
+
+    render(_, { value }) {
+	return (
+	<div class={style.home}>
+	<br/>	<br/>
+	<div class="UppyForm">
+		<form onSubmit={this.onSubmit}>
+		    <input type="file" name="files[]" multiple=""/>
+		    <button type="submit">Convert file</button>
+		</form>
+	</div>
+
+	<div class="uploaded-files">
+		<h5>Uploaded files:</h5>
+		<ol></ol>
+	</div>
+
+	<UploadFiles/>
+
+   </div>
+	);
+    }
+}
+
+export default Home;
