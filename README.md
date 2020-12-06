@@ -5,7 +5,8 @@ This project contains two tings: Dockerfile and install.sh files, which creates 
 
 Prerequirements
 
-1. Install npm (like )
+0. Possible to install: nvm
+1. Install npm (like 7.0.14, which npm version is supported for preact run) 
 2. In project dir, give command: npm i 
 3. Install preact-cli: npm i -g preact-cli (3.03 or later)
 4. chmod + *.sh
